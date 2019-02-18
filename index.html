@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Caroline Rozendo</title>
+
+  <style>
+    body, html{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      background: #efefef;
+    }
+    body{
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+    }
+    canvas{
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index:10;
+    }
+
+    canvas.dragging{
+      background: #dedede;
+    }
+
+    canvas.pointing{
+      cursor: pointer;
+    }
+    *{
+      box-sizing: border-box;
+    }
+    #label, #overlap{
+      font-size: 2.1rem;
+      opacity: 0.8;
+      position: absolute;
+      width: 100%;
+      z-index:0;
+      top:0;
+      left:0;
+      text-align: center;
+      padding: 36px 10px 0 10px;
+      font-weight: 100;
+      color: #666;
+      pointer-events: none;
+    }
+    #label span{
+      display: inline-block;
+      color: #0D9CCE;
+    }
+    #overlap{
+      font-size: 1rem;
+      top: auto;
+      bottom: 0;
+      padding: 0 10px 36px 10px;
+    }
+    #overlap #bar-title{
+      margin-bottom: 5px;
+      color: #000;
+    }
+    #overlap #bar{
+      border: 1px solid #dedede;
+      background: #fff;
+      width: 70%;
+      height: 20px;
+      padding: 3px;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+    #overlap #bar-fill{
+      background: #0D9CCE;
+      opacity:0.6;
+      height: 100%;
+      width: 0%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="label">drag & resize</div>
+  <div id="overlap">
+    <div id="bar-title">overlap area: <span id="bar-area"></span></div>
+    <div id="bar">
+      <div id="bar-fill"></div>
+    </div>
+  </div>
+  <canvas id="area"></canvas>
+</body>
+<script src="js/main.js"></script>
+</html>
